@@ -19,7 +19,7 @@
             android:id="@+id/avetEmail_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-mail"
+            android:hint="@string/e_mail"
             android:inputType="textEmailAddress"
             app:obrigatory_field="true" />
 
@@ -33,7 +33,7 @@
             android:id="@+id/avetUser_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome de usuário"
+            android:hint="@string/nome_de_usuario"
             android:inputType="text"
             app:obrigatory_field="true" />
 
@@ -47,7 +47,7 @@
             android:id="@+id/avetPass_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha"
+            android:hint="@string/senha"
             android:inputType="textPassword"
             app:compare_with="@id/avetCPass_cadastro"
             app:obrigatory_field="true" />
@@ -62,7 +62,7 @@
             android:id="@+id/avetCPass_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirme a senha"
+            android:hint="@string/confirme_a_senha"
             android:inputType="textPassword"
             app:compare_with="@id/avetPass_cadastro"
             app:obrigatory_field="true" />
@@ -78,6 +78,6 @@
         android:layout_marginTop="20dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:text="Cadastrar" />
+        android:text="@string/cadastrar" />
 
 </lib.rocigno.usefulthingslib.CustomViews.Views.AutoValidateLinearLayout>

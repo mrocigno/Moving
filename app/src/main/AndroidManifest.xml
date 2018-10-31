@@ -33,20 +33,20 @@
 
         <activity
             android:name=".Views.MainActivity"
-            android:label="@string/title_activity_main" />
+            android:label="@string/app_name" />
         <activity
             android:name=".Views.DefaultActivity"
             android:label="@string/title_activity_default"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Views.CadastroActivity"
-            android:label="Cadastro" />
+            android:label="@string/title_cadastro" />
         <activity
             android:name=".Views.AlterarSenhaActivity"
-            android:label="Alterar senha" />
+            android:label="@string/title_alterarsenha" />
         <activity
             android:name=".Views.ListaActivity"
-            android:label="Lista de usuários" />
+            android:label="@string/title_lista" />
     </application>
 
 </manifest>

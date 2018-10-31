@@ -19,7 +19,7 @@
             android:id="@+id/avetCurrentPass_alterarsenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha atual"
+            android:hint="@string/senha_atual"
             android:inputType="textPassword"
             app:obrigatory_field="true" />
 
@@ -33,7 +33,7 @@
             android:id="@+id/avetPass_alterarsenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha"
+            android:hint="@string/senha"
             android:inputType="textPassword"
             app:compare_with="@id/avetCPass_alterarsenha"
             app:obrigatory_field="true" />
@@ -48,7 +48,7 @@
             android:id="@+id/avetCPass_alterarsenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirme a senha"
+            android:hint="@string/confirme_a_senha"
             android:inputType="textPassword"
             app:compare_with="@id/avetPass_alterarsenha"
             app:obrigatory_field="true" />
@@ -64,6 +64,6 @@
         android:layout_marginTop="20dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:text="Alterar senha" />
+        android:text="@string/alterar_senha" />
 
 </lib.rocigno.usefulthingslib.CustomViews.Views.AutoValidateLinearLayout>

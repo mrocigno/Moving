@@ -1,12 +1,38 @@
 <resources>
     <string name="app_name">Moving</string>
     <string name="title_activity_default">DefaultActivity</string>
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="navigation_drawer_close">Fechar navigation drawer</string>
+
+    <!--Login-->
+    <string name="email">E-Mail</string>
     <string name="msg_login"><b>MOVING</b> \n Teste para Android JR.</string>
-    <string name="title_activity_main">Map</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="nao_tem_conta">Não tem conta?</string>
+    <string name="cadastre_se">Cadastre-se!</string>
+    <string name="lista_de_usuarios">Lista de usuários</string>
+
+    <!--Cadastro-->
+    <string name="title_cadastro">Cadastro</string>
+    <string name="nome_de_usuario">Nome de usuário</string>
+    <string name="confirme_a_senha">Confirme a senha</string>
+    <string name="cadastrar">Cadastrar</string>
+
+    <!--Lista-->
+    <string name="title_lista">Lista de usuários</string>
+    <string name="id_lbl">ID:</string>
+    <string name="email_lbl">Email:</string>
+    <string name="usuario_lbl">Usuário:</string>
+
+    <!--Main-->
+    <string name="ola">Olá,</string>
+    <string name="alterar_senha">Alterar senha</string>
+    <string name="sair">Sair</string>
+
+    <!--Alterar senha-->
+    <string name="title_alterarsenha">Alterar senha</string>
+    <string name="senha_atual">Senha atual</string>
+
+
 </resources>

@@ -35,19 +35,21 @@ public class DefaultActivity extends AppCompatActivity  {
     LinearLayout llExit_nav, llChange_nav;
     Toolbar toolbar;
     TextView txtUsuario_nav;
+    NavigationView navigationView;
+    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_default);
 
+        this.activity = DefaultActivity.this;
         toolbar = findViewById(R.id.toolbar);
-
-        frmContainer_default = findViewById(R.id.frmContainer_default);
-
         setSupportActionBar(toolbar);
 
-        this.activity = DefaultActivity.this;
+        frmContainer_default = findViewById(R.id.frmContainer_default);
+        navigationView = findViewById(R.id.nav_view);
+        drawer = findViewById(R.id.drawer_layout);
     }
 
     public void setContainerView(int layout){
@@ -58,19 +60,16 @@ public class DefaultActivity extends AppCompatActivity  {
     public void showBackPressed(){
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
     }
 
     public void showNavigationDrawer(){
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         toggle.getDrawerArrowDrawable().setColor(getColor(R.color.colorSecodary));
-
-//        NavigationView navigationView = findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
 
         txtUsuario_nav = findViewById(R.id.txtUsuario_nav);
         llExit_nav = findViewById(R.id.llExit_nav);

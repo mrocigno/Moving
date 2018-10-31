@@ -23,11 +23,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorSecodary"
-        android:textSize="20sp"
         android:layout_marginBottom="10dp"
+        android:text="@string/msg_login"
         android:textAlignment="center"
-        android:text="@string/msg_login"/>
+        android:textColor="@color/colorSecodary"
+        android:textSize="20sp" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -38,9 +38,9 @@
             android:id="@+id/avetEmail_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-Mail"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
-            app:obrigatory_field="true"/>
+            app:obrigatory_field="true" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -52,26 +52,22 @@
             android:id="@+id/avetSenha_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha"
+            android:hint="@string/senha"
             android:inputType="textPassword"
-            app:obrigatory_field="true"/>
+            app:obrigatory_field="true" />
 
     </android.support.design.widget.TextInputLayout>
 
-    <LinearLayout
+
+    <Button
+        android:id="@+id/btnEntrar_login"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="6dp"
+        android:text="@string/entrar" />
 
-        <Button
-            android:id="@+id/btnEntrar_login"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:text="Entrar" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -82,7 +78,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Não tem conta?"
+            android:text="@string/nao_tem_conta"
             android:textColor="@android:color/black" />
 
         <TextView
@@ -90,9 +86,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Cadastre-se!"
-            android:textStyle="bold"
-            android:textColor="?colorAccent" />
+            android:text="@string/cadastre_se"
+            android:textColor="?colorAccent"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -106,9 +102,9 @@
             android:id="@+id/txtLista_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lista de usuários"
-            android:textStyle="bold"
-            android:textColor="?colorAccent" />
+            android:text="@string/lista_de_usuarios"
+            android:textColor="?colorAccent"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

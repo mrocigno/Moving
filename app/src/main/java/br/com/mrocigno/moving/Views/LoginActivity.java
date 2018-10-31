@@ -96,7 +96,9 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
     @Override
     public void nextScreen(Class classe) {
         startActivity(new Intent(activity, classe));
-        if (classe == LoginActivity.class) finish();
+        if (classe == MainActivity.class) {
+            finish();
+        }
     }
 
     @Override

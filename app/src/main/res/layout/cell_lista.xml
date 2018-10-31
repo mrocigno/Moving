@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="10dp"
-    android:background="@drawable/border_top"
+    android:background="@drawable/border_bottom"
     android:paddingBottom="10dp"
     android:paddingStart="@dimen/layout_padding"
     android:paddingEnd="@dimen/layout_padding">
@@ -16,7 +16,7 @@
         <TableRow>
 
             <TextView
-                android:text="ID:"
+                android:text="@string/id_lbl"
                 android:textColor="@color/colorSecodary"
                 android:textStyle="bold" />
 
@@ -28,7 +28,7 @@
         <TableRow>
 
             <TextView
-                android:text="Email:"
+                android:text="@string/email_lbl"
                 android:textColor="@color/colorSecodary"
                 android:textStyle="bold" />
 
@@ -40,7 +40,7 @@
         <TableRow>
 
             <TextView
-                android:text="Usuário:"
+                android:text="@string/usuario_lbl"
                 android:textColor="@color/colorSecodary"
                 android:textStyle="bold" />
 

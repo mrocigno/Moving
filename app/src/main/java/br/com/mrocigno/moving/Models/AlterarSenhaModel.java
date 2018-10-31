@@ -23,7 +23,6 @@ public class AlterarSenhaModel extends MY_Model {
     }
 
     public boolean verifieCurrentPass(String currentPass, int id){
-        Toast.makeText(activity, currentPass + "  " + id, Toast.LENGTH_LONG).show();
         ArrayList<DatabaseValues> values = db.getValues("SELECT * FROM " + Database.getTABLE() + " WHERE " + Database.getPASSWORD() + " = '" + currentPass + "' AND " + Database.getID() + " = " + id);
         return values.size() > 0;
     }

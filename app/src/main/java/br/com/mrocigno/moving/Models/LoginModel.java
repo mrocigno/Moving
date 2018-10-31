@@ -1,7 +1,6 @@
 package br.com.mrocigno.moving.Models;
 
 import android.app.Activity;
-import android.widget.Toast;
 
 import br.com.mrocigno.moving.Database.DatabaseValues;
 import br.com.mrocigno.moving.Database.Session;
@@ -16,10 +15,10 @@ public class LoginModel extends MY_Model {
         this.activity = activity;
     }
 
-    public boolean logar(String user, String pass){
-        DatabaseValues dbv = db.getUser(user, pass);
+    public boolean logar(String email, String pass){
+        DatabaseValues dbv = db.getUser(email, pass);
         if(dbv != null){
-            createSession(user, pass);
+            createSession(dbv);
             Session.setNome(dbv.getUser());
             Session.setEmail(dbv.getEmail());
             Session.setId(dbv.getID());
@@ -30,8 +29,8 @@ public class LoginModel extends MY_Model {
 
     }
 
-    public void createSession(String user, String pass){
-        new LoginBuilder(activity).create(0, user,"", pass,"");
+    public void createSession(DatabaseValues dbv){
+        new LoginBuilder(activity).create(dbv.getID(), dbv.getEmail(),dbv.getUser(), dbv.getPassword(),"");
     }
 
 }

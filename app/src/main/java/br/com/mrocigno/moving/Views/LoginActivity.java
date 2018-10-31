@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,6 +38,9 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
     @BindView(R.id.txtCadastro_login)
     TextView txtCadastro_login;
 
+    @BindView(R.id.txtLista_login)
+    TextView txtLista_login;
+
     public LoginPresenter loginPresenter;
     public LoginModel loginModel;
 
@@ -54,11 +58,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
         btnEntrar_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (avllMain_login.isValidate()) {
-                    String user = avetEmail_login.getText().toString().trim();
-                    String pass = avetSenha_login.getText().toString().trim();
-                    loginPresenter.loginAction(user, pass);
-                }
+                loginAction();
             }
         });
 
@@ -68,8 +68,30 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
                 loginPresenter.screenCadastrar();
             }
         });
+
+        txtLista_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginPresenter.screenLista();
+            }
+        });
+
+        avetSenha_login.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                loginAction();
+                return true;
+            }
+        });
     }
 
+    public void loginAction(){
+        if (avllMain_login.isValidate()) {
+            String user = avetEmail_login.getText().toString().trim();
+            String pass = avetSenha_login.getText().toString().trim();
+            loginPresenter.loginAction(user, pass);
+        }
+    }
 
     @Override
     public void nextScreen(Class classe) {
@@ -81,4 +103,5 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
     public void showMsg(String msg) {
         Toast.makeText(activity, msg, Toast.LENGTH_LONG).show();
     }
+
 }

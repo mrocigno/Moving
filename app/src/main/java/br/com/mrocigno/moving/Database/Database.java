@@ -94,22 +94,18 @@ public class Database extends SQLiteOpenHelper {
         }
     }
 
-//    public void setUpdate(int id, String user, String user_name, String password, String token){
-//        SQLiteDatabase Database = getReadableDatabase();
-//        try {
-//            ContentValues initialValues = new ContentValues();
-//            initialValues.put(ID_WEB, id);
-//            initialValues.put(USER, user);
-//            initialValues.put(USER_NAME, user_name);
-//            initialValues.put(PASSWORD, password);
-//            initialValues.put(TOKEN, token);
-//            Database.update(TABLE, initialValues, "ID=1", null);
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }finally{
-//            Database.close();
-//        }
-//    }
+    public void updatePass(DatabaseValues dbv){
+        SQLiteDatabase Database = getReadableDatabase();
+        try {
+            ContentValues initialValues = new ContentValues();
+            initialValues.put(PASSWORD, dbv.getPassword());
+            Database.update(TABLE, initialValues, "ID=" + dbv.getID(), null);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally{
+            Database.close();
+        }
+    }
 
     public ArrayList<DatabaseValues> getValues(String SQL){
         ArrayList<DatabaseValues> result = new ArrayList<>();
@@ -119,10 +115,10 @@ public class Database extends SQLiteOpenHelper {
             Cursor cursor = Database.rawQuery(selectQuery, null);
             while(cursor.moveToNext()) {
                 int id = cursor.getInt(0);
-                String nome = cursor.getString(1);
-                String senha = cursor.getString(2);
+                String name = cursor.getString(1);
+                String pass = cursor.getString(2);
                 String email = cursor.getString(3);
-                result.add(new DatabaseValues(id, nome,senha, email));
+                result.add(new DatabaseValues(id, name,pass, email));
             }
             cursor.close();
             Database.close();
@@ -130,10 +126,10 @@ public class Database extends SQLiteOpenHelper {
         return result;
     }
 
-    public DatabaseValues getUser(String user, String pass){
+    public DatabaseValues getUser(String email, String pass){
         DatabaseValues result = null;
         try{
-            String selectQuery = "SELECT * FROM "+ TABLE +" WHERE "+ USER +" = '"+ user +"' AND " + PASSWORD + " = '" + pass + "'";
+            String selectQuery = "SELECT * FROM "+ TABLE +" WHERE "+ EMAIL +" = '"+ email +"' AND " + PASSWORD + " = '" + pass + "'";
 
             SQLiteDatabase Database = getWritableDatabase();
             Cursor cursor = Database.rawQuery(selectQuery, null);

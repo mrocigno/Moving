@@ -42,6 +42,30 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorSecodary"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:text="Olá,"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txtUsuario_nav"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/llChange_nav"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -57,7 +81,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/colorSecodary"
                     android:gravity="center_vertical"
-                    android:text="Alterar cadastro"/>
+                    android:text="Alterar senha"/>
 
                 <ImageView
                     android:layout_width="wrap_content"

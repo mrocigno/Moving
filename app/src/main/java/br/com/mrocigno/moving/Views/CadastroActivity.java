@@ -1,5 +1,6 @@
 package br.com.mrocigno.moving.Views;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,8 @@ public class CadastroActivity extends DefaultActivity implements CadastroInterfa
     AutoValidateLinearLayout avllMain_cadastro;
 
     CadastroPresenter presenter;
+
+    String action;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

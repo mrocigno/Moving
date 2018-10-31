@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lib.rocigno.usefulthingslib.CustomViews.Views.AutoValidateLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/avllMain_alterarsenha"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/layout_padding"
+    android:paddingTop="@dimen/layout_top_padding"
+    android:paddingEnd="@dimen/layout_padding"
+    tools:context=".Views.AlterarSenhaActivity">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <lib.rocigno.usefulthingslib.CustomViews.Views.AutoValidateEditText
+            android:id="@+id/avetCurrentPass_alterarsenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Senha atual"
+            android:inputType="textPassword"
+            app:obrigatory_field="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <lib.rocigno.usefulthingslib.CustomViews.Views.AutoValidateEditText
+            android:id="@+id/avetPass_alterarsenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            app:compare_with="@id/avetCPass_alterarsenha"
+            app:obrigatory_field="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <lib.rocigno.usefulthingslib.CustomViews.Views.AutoValidateEditText
+            android:id="@+id/avetCPass_alterarsenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirme a senha"
+            android:inputType="textPassword"
+            app:compare_with="@id/avetPass_alterarsenha"
+            app:obrigatory_field="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnAlterar_alterarsenha"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Alterar senha" />
+
+</lib.rocigno.usefulthingslib.CustomViews.Views.AutoValidateLinearLayout>

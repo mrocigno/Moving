@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:background="@drawable/border_top"
+    android:paddingBottom="10dp"
+    android:paddingStart="@dimen/layout_padding"
+    android:paddingEnd="@dimen/layout_padding">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <TextView
+                android:text="ID:"
+                android:textColor="@color/colorSecodary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtID_celllista"
+                android:layout_marginStart="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Email:"
+                android:textColor="@color/colorSecodary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtEmail_celllista"
+                android:layout_marginStart="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Usuário:"
+                android:textColor="@color/colorSecodary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtUser_celllista"
+                android:layout_marginStart="5dp" />
+        </TableRow>
+
+
+
+    </TableLayout>
+
+</LinearLayout>

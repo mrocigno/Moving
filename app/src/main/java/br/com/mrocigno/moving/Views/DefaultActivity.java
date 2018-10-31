@@ -19,19 +19,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import br.com.mrocigno.moving.Database.Session;
 import br.com.mrocigno.moving.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import lib.rocigno.usefulthingslib.Session.LoginBuilder.LoginBuilder;
 
-public class DefaultActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class DefaultActivity extends AppCompatActivity  {
 
     Activity activity;
 
     FrameLayout frmContainer_default;
-    LinearLayout llExit_nav;
+    LinearLayout llExit_nav, llChange_nav;
     Toolbar toolbar;
+    TextView txtUsuario_nav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,25 +42,12 @@ public class DefaultActivity extends AppCompatActivity implements NavigationView
         setContentView(R.layout.activity_default);
 
         toolbar = findViewById(R.id.toolbar);
-        llExit_nav = findViewById(R.id.llExit_nav);
+
         frmContainer_default = findViewById(R.id.frmContainer_default);
 
         setSupportActionBar(toolbar);
 
         this.activity = DefaultActivity.this;
-
-        llExit_nav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new LoginBuilder(activity).destroy(new LoginBuilder.DestroyLoginCallback() {
-                    @Override
-                    public void CallBack() {
-                        startActivity(new Intent(activity, LoginActivity.class));
-                        finish();
-                    }
-                });
-            }
-        });
     }
 
     public void setContainerView(int layout){
@@ -79,8 +69,34 @@ public class DefaultActivity extends AppCompatActivity implements NavigationView
 
         toggle.getDrawerArrowDrawable().setColor(getColor(R.color.colorSecodary));
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        NavigationView navigationView = findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
+
+        txtUsuario_nav = findViewById(R.id.txtUsuario_nav);
+        llExit_nav = findViewById(R.id.llExit_nav);
+        llChange_nav = findViewById(R.id.llChange_nav);
+
+        txtUsuario_nav.setText(Session.getNome());
+        llExit_nav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new LoginBuilder(activity).destroy(new LoginBuilder.DestroyLoginCallback() {
+                    @Override
+                    public void CallBack() {
+                        startActivity(new Intent(activity, LoginActivity.class));
+                        finish();
+                    }
+                });
+            }
+        });
+
+        llChange_nav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(activity, AlterarSenhaActivity.class));
+            }
+        });
+
     }
 
     @Override
@@ -110,28 +126,28 @@ public class DefaultActivity extends AppCompatActivity implements NavigationView
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+//    @SuppressWarnings("StatementWithEmptyBody")
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//        // Handle navigation view item clicks here.
+//        int id = item.getItemId();
+//
+//        if (id == R.id.nav_camera) {
+//            // Handle the camera action
+//        } else if (id == R.id.nav_gallery) {
+//
+//        } else if (id == R.id.nav_slideshow) {
+//
+//        } else if (id == R.id.nav_manage) {
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_send) {
+//
+//        }
+//
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
+//        return true;
+//    }
 }

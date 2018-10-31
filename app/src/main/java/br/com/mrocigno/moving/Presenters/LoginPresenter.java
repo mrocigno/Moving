@@ -4,6 +4,7 @@ import android.widget.Toast;
 
 import br.com.mrocigno.moving.Models.LoginModel;
 import br.com.mrocigno.moving.Views.CadastroActivity;
+import br.com.mrocigno.moving.Views.ListaActivity;
 import br.com.mrocigno.moving.Views.MainActivity;
 
 public class LoginPresenter {
@@ -16,8 +17,8 @@ public class LoginPresenter {
         this.loginModel = loginModel;
     }
 
-    public void loginAction(String user, String pass){
-        if(loginModel.logar(user, pass)){
+    public void loginAction(String email, String pass){
+        if(loginModel.logar(email, pass)){
             loginInterface.nextScreen(MainActivity.class);
         }else{
             loginInterface.showMsg("Email/Senha incorretos");
@@ -26,5 +27,8 @@ public class LoginPresenter {
 
     public void screenCadastrar(){
         loginInterface.nextScreen(CadastroActivity.class);
+    }
+    public void screenLista(){
+        loginInterface.nextScreen(ListaActivity.class);
     }
 }

@@ -8,11 +8,8 @@ import lib.rocigno.usefulthingslib.Session.LoginBuilder.UserModel;
 
 public class SplashModel extends LoginBuilder {
 
-    Activity activity;
-
     public SplashModel(Activity activity) {
         super(activity);
-        this.activity = activity;
     }
 
     private boolean verifie;

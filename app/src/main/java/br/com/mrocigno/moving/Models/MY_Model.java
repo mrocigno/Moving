@@ -4,10 +4,10 @@ import android.app.Activity;
 
 import br.com.mrocigno.moving.Database.Database;
 
-public class MY_Model {
-    public Database db;
+class MY_Model {
+    Database db;
 
-    public MY_Model(Activity activity) {
+    MY_Model(Activity activity) {
         this.db = new Database(activity);
     }
 }

@@ -39,10 +39,6 @@ public class Database extends SQLiteOpenHelper {
         return EMAIL;
     }
 
-    public static int getVERSAO() {
-        return VERSAO;
-    }
-
     public Database(Context context){
         super(context, NOME_BANCO,null, VERSAO);
     }
@@ -110,9 +106,8 @@ public class Database extends SQLiteOpenHelper {
     public ArrayList<DatabaseValues> getValues(String SQL){
         ArrayList<DatabaseValues> result = new ArrayList<>();
         try{
-            String selectQuery = SQL;
             SQLiteDatabase Database = getWritableDatabase();
-            Cursor cursor = Database.rawQuery(selectQuery, null);
+            Cursor cursor = Database.rawQuery(SQL, null);
             while(cursor.moveToNext()) {
                 int id = cursor.getInt(0);
                 String name = cursor.getString(1);

@@ -14,6 +14,7 @@ import br.com.mrocigno.moving.Models.LoginModel;
 import br.com.mrocigno.moving.Presenters.LoginPresenter;
 import br.com.mrocigno.moving.R;
 import br.com.mrocigno.moving.Presenters.LoginInterface;
+import br.com.mrocigno.moving.Utils.Utils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import lib.rocigno.usefulthingslib.CustomViews.Views.AutoValidateEditText;
@@ -83,6 +84,8 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
                 return true;
             }
         });
+
+        Utils.verifiePermissions(activity);
     }
 
     public void loginAction(){

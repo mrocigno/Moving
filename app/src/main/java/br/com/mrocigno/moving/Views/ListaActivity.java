@@ -2,12 +2,10 @@ package br.com.mrocigno.moving.Views;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +56,7 @@ public class ListaActivity extends DefaultActivity implements ListaInterface {
         Activity activity;
         ArrayList<DatabaseValues> itens;
 
-        public ListaAdapter(Activity activity, ArrayList<DatabaseValues> itens) {
+        ListaAdapter(Activity activity, ArrayList<DatabaseValues> itens) {
             this.activity = activity;
             this.itens = itens;
         }
@@ -84,7 +82,7 @@ public class ListaActivity extends DefaultActivity implements ListaInterface {
 
             TextView txtID_celllista, txtEmail_celllista, txtUser_celllista;
 
-            public Holder(@NonNull View itemView) {
+            Holder(@NonNull View itemView) {
                 super(itemView);
                 txtID_celllista = itemView.findViewById(R.id.txtID_celllista);
                 txtEmail_celllista = itemView.findViewById(R.id.txtEmail_celllista);

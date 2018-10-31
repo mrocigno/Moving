@@ -9,11 +9,8 @@ import br.com.mrocigno.moving.Database.DatabaseValues;
 
 public class CadastroModel extends MY_Model {
 
-    Activity activity;
-
     public CadastroModel(Activity activity) {
         super(activity);
-        this.activity = activity;
     }
 
     public boolean verifieUser(String user){

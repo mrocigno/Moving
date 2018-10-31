@@ -1,7 +1,5 @@
 package br.com.mrocigno.moving.Presenters;
 
-import android.widget.Toast;
-
 import br.com.mrocigno.moving.Models.LoginModel;
 import br.com.mrocigno.moving.Views.CadastroActivity;
 import br.com.mrocigno.moving.Views.ListaActivity;

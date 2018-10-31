@@ -1,8 +1,6 @@
 package br.com.mrocigno.moving.Models;
 
 import android.app.Activity;
-import android.util.Log;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -11,11 +9,8 @@ import br.com.mrocigno.moving.Database.DatabaseValues;
 
 public class AlterarSenhaModel extends MY_Model {
 
-    Activity activity;
-
     public AlterarSenhaModel(Activity activity) {
         super(activity);
-        this.activity = activity;
     }
 
     public void updatePass(DatabaseValues dbv){

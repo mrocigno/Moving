@@ -1,10 +1,10 @@
 package br.com.mrocigno.moving.Database;
 
 public class DatabaseValues {
-    int ID;
-    String user;
-    String password;
-    String email;
+    private int ID;
+    private String user;
+    private String password;
+    private String email;
 
     public DatabaseValues(int ID, String user, String password, String email) {
         this.ID = ID;

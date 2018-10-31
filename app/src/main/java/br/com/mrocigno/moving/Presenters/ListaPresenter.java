@@ -7,8 +7,8 @@ import br.com.mrocigno.moving.Models.ListaModel;
 
 public class ListaPresenter {
 
-    ListaInterface listaInterface;
-    ListaModel listaModel;
+    private ListaInterface listaInterface;
+    private ListaModel listaModel;
 
     public ListaPresenter(ListaInterface listaInterface, ListaModel listaModel) {
         this.listaInterface = listaInterface;

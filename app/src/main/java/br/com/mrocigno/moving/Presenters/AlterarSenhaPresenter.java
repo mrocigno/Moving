@@ -5,8 +5,8 @@ import br.com.mrocigno.moving.Models.AlterarSenhaModel;
 
 public class AlterarSenhaPresenter {
 
-    AlterarSenhaInterface alterarSenhaInterface;
-    AlterarSenhaModel alterarSenhaModel;
+    private AlterarSenhaInterface alterarSenhaInterface;
+    private AlterarSenhaModel alterarSenhaModel;
 
     public AlterarSenhaPresenter(AlterarSenhaInterface alterarSenhaInterface, AlterarSenhaModel alterarSenhaModel) {
         this.alterarSenhaInterface = alterarSenhaInterface;

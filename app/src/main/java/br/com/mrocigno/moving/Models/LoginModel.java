@@ -29,7 +29,7 @@ public class LoginModel extends MY_Model {
 
     }
 
-    public void createSession(DatabaseValues dbv){
+    private void createSession(DatabaseValues dbv){
         new LoginBuilder(activity).create(dbv.getID(), dbv.getEmail(),dbv.getUser(), dbv.getPassword(),"");
     }
 

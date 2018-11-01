@@ -2,8 +2,10 @@ package br.com.mrocigno.moving.Views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.mrocigno.moving.Database.DatabaseValues;
@@ -48,11 +50,23 @@ public class AlterarSenhaActivity extends DefaultActivity implements AlterarSenh
         btnAlterar_alterarsenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(avllMain_alterarsenha.isValidate()){
-                    presenter.updatePass(new DatabaseValues(Session.getId(), avetCurrentPass_alterarsenha.getText().toString().trim(), avetPass_alterarsenha.getText().toString().trim(), ""));
-                }
+                actionUpdate();
             }
         });
+
+        avetCPass_alterarsenha.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                actionUpdate();
+                return true;
+            }
+        });
+    }
+
+    private void actionUpdate() {
+        if (avllMain_alterarsenha.isValidate()) {
+            presenter.updatePass(new DatabaseValues(Session.getId(), avetCurrentPass_alterarsenha.getText().toString().trim(), avetPass_alterarsenha.getText().toString().trim(), ""));
+        }
     }
 
     @Override

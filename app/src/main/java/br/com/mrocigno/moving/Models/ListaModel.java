@@ -13,7 +13,7 @@ public class ListaModel extends MY_Model {
         super(activity);
     }
 
-    public ArrayList<DatabaseValues> getUsers(){
+    public ArrayList<DatabaseValues> getUsers() {
         return db.getValues("SELECT * FROM " + Database.getTABLE());
     }
 

@@ -32,14 +32,15 @@ public class SplashActivity extends AppCompatActivity implements SplashInterface
         finish();
     }
 
-    private void initCountdown(){
-        new Thread(){
+    private void initCountdown() {
+        new Thread() {
             @Override
             public void run() {
-                try{
+                try {
                     sleep(1000);
                     presenter.nextScreen();
-                }catch (Exception ignore){}
+                } catch (Exception ignore) {
+                }
             }
         }.start();
     }

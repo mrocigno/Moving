@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import br.com.mrocigno.moving.R;
 import br.com.mrocigno.moving.Utils.Utils;
 
-public class MainActivity extends DefaultActivity implements OnMapReadyCallback{
+public class MainActivity extends DefaultActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationClient;

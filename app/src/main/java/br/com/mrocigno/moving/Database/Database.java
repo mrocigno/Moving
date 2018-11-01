@@ -39,25 +39,25 @@ public class Database extends SQLiteOpenHelper {
         return EMAIL;
     }
 
-    public Database(Context context){
-        super(context, NOME_BANCO,null, VERSAO);
+    public Database(Context context) {
+        super(context, NOME_BANCO, null, VERSAO);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE "+TABLE+" ("
+        String sql = "CREATE TABLE " + TABLE + " ("
                 + ID + " integer primary key autoincrement,"
                 + USER + " text,"
                 + PASSWORD + " text,"
                 + EMAIL + " text"
-                +")";
+                + ")";
         db.beginTransaction();
         try {
             ExecutarComandosSQL(db, sql);
             db.setTransactionSuccessful();
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.e("Error", e.getMessage());
-        }finally {
+        } finally {
             db.endTransaction();
         }
 
@@ -69,13 +69,13 @@ public class Database extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    private void ExecutarComandosSQL(SQLiteDatabase db, String sql){
+    private void ExecutarComandosSQL(SQLiteDatabase db, String sql) {
 
-        if (sql.trim().length()>0)
+        if (sql.trim().length() > 0)
             db.execSQL(sql);
     }
 
-    public void insert(DatabaseValues dbv){
+    public void insert(DatabaseValues dbv) {
         SQLiteDatabase db = getReadableDatabase();
         try {
             ContentValues initialValues = new ContentValues();
@@ -83,57 +83,61 @@ public class Database extends SQLiteOpenHelper {
             initialValues.put(PASSWORD, dbv.getPassword());
             initialValues.put(EMAIL, dbv.getEmail());
             db.insert(TABLE, null, initialValues);
-        }catch (SQLException e){
+        } catch (SQLException e) {
             Log.e("TESTEEE", e.getMessage(), e.getCause());
-        }finally{
+        } finally {
             db.close();
         }
     }
 
-    public void updatePass(DatabaseValues dbv){
+    public void updatePass(DatabaseValues dbv) {
         SQLiteDatabase Database = getReadableDatabase();
         try {
             ContentValues initialValues = new ContentValues();
             initialValues.put(PASSWORD, dbv.getPassword());
             Database.update(TABLE, initialValues, "ID=" + dbv.getID(), null);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             Database.close();
         }
     }
 
-    public ArrayList<DatabaseValues> getValues(String SQL){
+    public ArrayList<DatabaseValues> getValues(String SQL) {
         ArrayList<DatabaseValues> result = new ArrayList<>();
-        try{
+        try {
             SQLiteDatabase Database = getWritableDatabase();
             Cursor cursor = Database.rawQuery(SQL, null);
-            while(cursor.moveToNext()) {
+            while (cursor.moveToNext()) {
                 int id = cursor.getInt(0);
                 String name = cursor.getString(1);
                 String pass = cursor.getString(2);
                 String email = cursor.getString(3);
-                result.add(new DatabaseValues(id, name,pass, email));
+                result.add(new DatabaseValues(id, name, pass, email));
             }
             cursor.close();
             Database.close();
-        }catch (SQLException e){e.printStackTrace();}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return result;
     }
 
-    public DatabaseValues getUser(String email, String pass){
+    public DatabaseValues getUser(String email, String pass) {
         DatabaseValues result = null;
-        try{
-            String selectQuery = "SELECT * FROM "+ TABLE +" WHERE "+ EMAIL +" = '"+ email +"' AND " + PASSWORD + " = '" + pass + "'";
+        try {
+            String selectQuery = "SELECT * FROM " + TABLE + " WHERE " + EMAIL + " = '" + email + "' AND " + PASSWORD + " = '" + pass + "'";
 
             SQLiteDatabase Database = getWritableDatabase();
             Cursor cursor = Database.rawQuery(selectQuery, null);
-            if(cursor.moveToFirst()) {
+            if (cursor.moveToFirst()) {
                 result = new DatabaseValues(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
             }
             cursor.close();
             Database.close();
-        }catch (SQLException e){e.printStackTrace();}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return result;
     }
 }

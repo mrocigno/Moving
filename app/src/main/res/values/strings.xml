@@ -12,6 +12,7 @@
     <string name="nao_tem_conta">Não tem conta?</string>
     <string name="cadastre_se">Cadastre-se!</string>
     <string name="lista_de_usuarios">Lista de usuários</string>
+    <string name="logo_description">logo</string>
 
     <!--Cadastro-->
     <string name="title_cadastro">Cadastro</string>
@@ -33,6 +34,7 @@
     <!--Alterar senha-->
     <string name="title_alterarsenha">Alterar senha</string>
     <string name="senha_atual">Senha atual</string>
+
 
 
 </resources>

@@ -1,8 +1,10 @@
 package br.com.mrocigno.moving.Views;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.mrocigno.moving.Database.DatabaseValues;
@@ -50,15 +52,27 @@ public class CadastroActivity extends DefaultActivity implements CadastroInterfa
         btnSigin_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(avllMain_cadastro.isValidate()){
-                    String user = avetUser_cadastro.getText().toString().trim();
-                    String pass = avetPass_cadastro.getText().toString().trim();
-                    String email = avetEmail_cadastro.getText().toString().trim();
-                    presenter.cadastrar(new DatabaseValues(0,user,pass,email ));
-                }
+                actionCadastrar();
             }
         });
 
+        avetCPass_cadastro.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                actionCadastrar();
+                return true;
+            }
+        });
+
+    }
+
+    private void actionCadastrar() {
+        if (avllMain_cadastro.isValidate()) {
+            String user = avetUser_cadastro.getText().toString().trim();
+            String pass = avetPass_cadastro.getText().toString().trim();
+            String email = avetEmail_cadastro.getText().toString().trim();
+            presenter.cadastrar(new DatabaseValues(0, user, pass, email));
+        }
     }
 
 

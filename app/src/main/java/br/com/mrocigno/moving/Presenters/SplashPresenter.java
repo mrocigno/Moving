@@ -14,10 +14,10 @@ public class SplashPresenter {
         this.splashModel = splashModel;
     }
 
-    public void nextScreen(){
-        if(splashModel.verifieIfLoged()){
+    public void nextScreen() {
+        if (splashModel.verifieIfLoged()) {
             splashInterface.nextScreen(MainActivity.class);
-        }else{
+        } else {
             splashInterface.nextScreen(LoginActivity.class);
         }
     }

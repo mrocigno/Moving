@@ -15,7 +15,7 @@ public class ListaPresenter {
         this.listaModel = listaModel;
     }
 
-    public void fillArray(){
+    public void fillArray() {
         ArrayList<DatabaseValues> values = listaModel.getUsers();
         listaInterface.onLoad(values);
     }

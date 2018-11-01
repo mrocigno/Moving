@@ -20,8 +20,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                     android:text="@string/app_name"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -52,7 +52,7 @@
                     android:paddingStart="20dp"
                     android:text="@string/ola"
                     android:textColor="@android:color/white"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtUsuario_nav"
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
                     android:textColor="@android:color/white"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -68,25 +68,25 @@
                 android:id="@+id/llChange_nav"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:foreground="?android:selectableItemBackground"
                 android:background="@drawable/border_bottom"
+                android:foreground="?android:selectableItemBackground"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingStart="10dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorSecodary"
                     android:gravity="center_vertical"
-                    android:text="@string/alterar_senha"/>
+                    android:paddingStart="10dp"
+                    android:text="@string/alterar_senha"
+                    android:textColor="@color/colorSecodary"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_arrow_right"
-                    android:tint="@color/colorSecodary"/>
+                    android:tint="@color/colorSecodary" />
 
             </LinearLayout>
 
@@ -96,28 +96,28 @@
 
                 <LinearLayout
                     android:id="@+id/llExit_nav"
-                    android:layout_gravity="bottom"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:foreground="?android:selectableItemBackground"
+                    android:layout_gravity="bottom"
                     android:background="@drawable/border_top"
+                    android:foreground="?android:selectableItemBackground"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:paddingStart="10dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorSecodary"
                         android:gravity="center_vertical"
-                        android:text="@string/sair"/>
+                        android:paddingStart="10dp"
+                        android:text="@string/sair"
+                        android:textColor="@color/colorSecodary"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_arrow_right"
-                        android:tint="@color/colorSecodary"/>
+                        android:tint="@color/colorSecodary" />
 
                 </LinearLayout>
 

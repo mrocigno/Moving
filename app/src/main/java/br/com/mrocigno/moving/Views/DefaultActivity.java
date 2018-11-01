@@ -21,7 +21,7 @@ import br.com.mrocigno.moving.Database.Session;
 import br.com.mrocigno.moving.R;
 import lib.rocigno.usefulthingslib.Session.LoginBuilder.LoginBuilder;
 
-public class DefaultActivity extends AppCompatActivity  {
+public class DefaultActivity extends AppCompatActivity {
 
     Activity activity;
 
@@ -46,18 +46,18 @@ public class DefaultActivity extends AppCompatActivity  {
         drawer = findViewById(R.id.drawer_layout);
     }
 
-    public void setContainerView(int layout){
+    public void setContainerView(int layout) {
         View v = getLayoutInflater().inflate(layout, null);
         frmContainer_default.addView(v);
     }
 
-    public void showBackPressed(){
+    public void showBackPressed() {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
     }
 
-    public void showNavigationDrawer(){
+    public void showNavigationDrawer() {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -104,13 +104,9 @@ public class DefaultActivity extends AppCompatActivity  {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        switch (id){
-            case android.R.id.home:{
+        switch (id) {
+            case android.R.id.home: {
                 onBackPressed();
                 break;
             }
@@ -118,29 +114,4 @@ public class DefaultActivity extends AppCompatActivity  {
 
         return super.onOptionsItemSelected(item);
     }
-
-//    @SuppressWarnings("StatementWithEmptyBody")
-//    @Override
-//    public boolean onNavigationItemSelected(MenuItem item) {
-//        // Handle navigation view item clicks here.
-//        int id = item.getItemId();
-//
-//        if (id == R.id.nav_camera) {
-//            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
-//
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        drawer.closeDrawer(GravityCompat.START);
-//        return true;
-//    }
 }

@@ -13,11 +13,11 @@ public class AlterarSenhaModel extends MY_Model {
         super(activity);
     }
 
-    public void updatePass(DatabaseValues dbv){
+    public void updatePass(DatabaseValues dbv) {
         db.updatePass(dbv);
     }
 
-    public boolean verifieCurrentPass(String currentPass, int id){
+    public boolean verifieCurrentPass(String currentPass, int id) {
         ArrayList<DatabaseValues> values = db.getValues("SELECT * FROM " + Database.getTABLE() + " WHERE " + Database.getPASSWORD() + " = '" + currentPass + "' AND " + Database.getID() + " = " + id);
         return values.size() > 0;
     }

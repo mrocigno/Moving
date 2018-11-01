@@ -18,35 +18,47 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Views.SplashActivity">
+
+        <activity
+            android:name=".Views.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Views.LoginActivity" />
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".Views.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity
             android:name=".Views.MainActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Views.DefaultActivity"
             android:label="@string/title_activity_default"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Views.CadastroActivity"
-            android:label="@string/title_cadastro" />
+            android:label="@string/title_cadastro"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity
             android:name=".Views.AlterarSenhaActivity"
-            android:label="@string/title_alterarsenha" />
+            android:label="@string/title_alterarsenha"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity
             android:name=".Views.ListaActivity"
-            android:label="@string/title_lista" />
+            android:label="@string/title_lista"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
     </application>
 
 </manifest>

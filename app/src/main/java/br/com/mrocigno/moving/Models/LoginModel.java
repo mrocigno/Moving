@@ -15,22 +15,22 @@ public class LoginModel extends MY_Model {
         this.activity = activity;
     }
 
-    public boolean logar(String email, String pass){
+    public boolean logar(String email, String pass) {
         DatabaseValues dbv = db.getUser(email, pass);
-        if(dbv != null){
+        if (dbv != null) {
             createSession(dbv);
             Session.setNome(dbv.getUser());
             Session.setEmail(dbv.getEmail());
             Session.setId(dbv.getID());
             return true;
-        }else{
+        } else {
             return false;
         }
 
     }
 
-    private void createSession(DatabaseValues dbv){
-        new LoginBuilder(activity).create(dbv.getID(), dbv.getEmail(),dbv.getUser(), dbv.getPassword(),"");
+    private void createSession(DatabaseValues dbv) {
+        new LoginBuilder(activity).create(dbv.getID(), dbv.getEmail(), dbv.getUser(), dbv.getPassword(), "");
     }
 
 }

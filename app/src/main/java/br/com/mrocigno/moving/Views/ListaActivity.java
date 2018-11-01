@@ -51,7 +51,7 @@ public class ListaActivity extends DefaultActivity implements ListaInterface {
         startActivity(new Intent(activity, classe));
     }
 
-    class ListaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    class ListaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         Activity activity;
         ArrayList<DatabaseValues> itens;
@@ -78,7 +78,7 @@ public class ListaActivity extends DefaultActivity implements ListaInterface {
             return itens.size();
         }
 
-        class Holder extends RecyclerView.ViewHolder{
+        class Holder extends RecyclerView.ViewHolder {
 
             TextView txtID_celllista, txtEmail_celllista, txtUser_celllista;
 
@@ -89,7 +89,7 @@ public class ListaActivity extends DefaultActivity implements ListaInterface {
                 txtUser_celllista = itemView.findViewById(R.id.txtUser_celllista);
             }
 
-            public void setData(DatabaseValues item){
+            public void setData(DatabaseValues item) {
                 txtID_celllista.setText(String.valueOf(item.getID()));
                 txtEmail_celllista.setText(item.getEmail());
                 txtUser_celllista.setText(item.getUser());

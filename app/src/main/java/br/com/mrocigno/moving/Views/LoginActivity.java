@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
         Utils.verifiePermissions(activity);
     }
 
-    public void loginAction(){
+    public void loginAction() {
         if (avllMain_login.isValidate()) {
             String user = avetEmail_login.getText().toString().trim();
             String pass = avetSenha_login.getText().toString().trim();

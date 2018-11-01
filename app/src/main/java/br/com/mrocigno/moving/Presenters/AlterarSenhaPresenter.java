@@ -13,11 +13,11 @@ public class AlterarSenhaPresenter {
         this.alterarSenhaModel = alterarSenhaModel;
     }
 
-    public void updatePass(DatabaseValues dbv){
-        if(alterarSenhaModel.verifieCurrentPass(dbv.getUser(), dbv.getID())){
+    public void updatePass(DatabaseValues dbv) {
+        if (alterarSenhaModel.verifieCurrentPass(dbv.getUser(), dbv.getID())) {
             alterarSenhaModel.updatePass(dbv);
             alterarSenhaInterface.onUpdatePass();
-        }else{
+        } else {
             alterarSenhaInterface.setCurrentPassError("Senha atual incorreta");
         }
     }

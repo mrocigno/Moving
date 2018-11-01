@@ -15,18 +15,19 @@ public class LoginPresenter {
         this.loginModel = loginModel;
     }
 
-    public void loginAction(String email, String pass){
-        if(loginModel.logar(email, pass)){
+    public void loginAction(String email, String pass) {
+        if (loginModel.logar(email, pass)) {
             loginInterface.nextScreen(MainActivity.class);
-        }else{
+        } else {
             loginInterface.showMsg("Email/Senha incorretos");
         }
     }
 
-    public void screenCadastrar(){
+    public void screenCadastrar() {
         loginInterface.nextScreen(CadastroActivity.class);
     }
-    public void screenLista(){
+
+    public void screenLista() {
         loginInterface.nextScreen(ListaActivity.class);
     }
 }

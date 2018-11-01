@@ -13,17 +13,17 @@ public class CadastroModel extends MY_Model {
         super(activity);
     }
 
-    public boolean verifieUser(String user){
-        ArrayList<DatabaseValues> values = db.getValues("SELECT * FROM " + Database.getTABLE() + " WHERE " + Database.getUSER() + " = '"+ user +"'" );
+    public boolean verifieUser(String user) {
+        ArrayList<DatabaseValues> values = db.getValues("SELECT * FROM " + Database.getTABLE() + " WHERE " + Database.getUSER() + " = '" + user + "'");
         return values.size() > 0;
     }
 
-    public boolean verifieEmail(String email){
-        ArrayList<DatabaseValues> values = db.getValues("SELECT * FROM " + Database.getTABLE() + " WHERE " + Database.getEMAIL() + " = '"+ email +"'" );
+    public boolean verifieEmail(String email) {
+        ArrayList<DatabaseValues> values = db.getValues("SELECT * FROM " + Database.getTABLE() + " WHERE " + Database.getEMAIL() + " = '" + email + "'");
         return values.size() > 0;
     }
 
-    public void cadastrar(DatabaseValues dbv){
+    public void cadastrar(DatabaseValues dbv) {
         db.insert(dbv);
     }
 

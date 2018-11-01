@@ -13,7 +13,8 @@ public class SplashModel extends LoginBuilder {
     }
 
     private boolean verifie;
-    public boolean verifieIfLoged(){
+
+    public boolean verifieIfLoged() {
         isLoged(new isLogedCallback() {
             @Override
             public void onIsLoged(UserModel userModel) {
